@@ -3,7 +3,6 @@
 {
     home.username = "ramo";
     home.homeDirectory = "/home/ramo";
-    programs.git.enable = true;
     home.stateVersion = "26.05";
     programs.bash = {
         enable = true;
@@ -40,4 +39,15 @@
         xsel
         slock
     ];
+    
+  programs.git = {
+      enable = true;
+      settings = {
+          user = {
+              name = "Aaro Karhu";
+              email = "aaro.karhu19@gmail.com";
+          };
+          init.defaultBranch = "main";
+      }; 
+  };
 }
