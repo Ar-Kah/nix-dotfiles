@@ -36,20 +36,20 @@
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       windowManager.awesome = {
-	enable = true;
-	luaModules = with pkgs.luaPackages; [
-	  luarocks
-	  luadbi-mysql
-	  awesome-wm-widgets	    
-	  luautf8
+        enable = true;
+        luaModules = with pkgs.luaPackages; [
+          luarocks
+          luadbi-mysql
+          awesome-wm-widgets      
+          luautf8
         ];
       };
-      displayManager = {
-	sddm.enable = true;
-	defaultSession = "none+awesome";
-      };
   };
-  
+
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "none+awesome";
+  };  
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "fi";
