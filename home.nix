@@ -24,6 +24,11 @@
         nodejs
         gcc
 
+        # dependencies for vterm in doom emacs
+        cmake
+        gnumake
+        libtool
+
         # awesomewm themes dependencies
         alsa-utils
         dmenu
