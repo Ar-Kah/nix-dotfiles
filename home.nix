@@ -12,11 +12,6 @@
         ./zsh_config.nix
     ];
 
-
-    # Add path to doom emacs binaries
-    home.sessionPath = [
-        "$HOME/.config/emacs/bin"
-    ];
     home.packages = with pkgs; [
         ripgrep
         emacs
