@@ -11,8 +11,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "acpi_osi=Linux" "acpi_backlight=vendor" ];
 
+  # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
+  nixpkgs.config.allowUnfree = true;
+
   # Enable Zsh system-wide so it gets added to /etc/shells
   programs.zsh.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 
 
   networking.hostName = "nixos-btw"; # Define your hostname.
