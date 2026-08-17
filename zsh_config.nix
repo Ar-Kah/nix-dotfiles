@@ -29,9 +29,12 @@
     '';
 
     initExtra = ''
-      # Source user p10k config if it exists
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-    '';
+    # Source Powerlevel10k theme
+    source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+    # Source user p10k config directly from your dotfiles
+    source ${./p10k.zsh}
+  '';
 
     shellAliases = {
       ll = "ls -l";
