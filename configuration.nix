@@ -4,13 +4,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./zsh_config
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "acpi_osi=Linux" "acpi_backlight=vendor" ];
+
+  # Enable Zsh system-wide so it gets added to /etc/shells
+  programs.zsh.enable = true;
+
 
   networking.hostName = "nixos-btw"; # Define your hostname.
 
@@ -70,6 +73,7 @@
   users.users.ramo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
     packages = with pkgs; [
       tree
     ];
@@ -103,23 +107,5 @@
     options = "--delete-older-than 30d";
   };
 
-  programs.zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-
-      shellAliases = {
-          ll = "ls -l";
-          edit = "sudo -e";
-          update = "sudo nixos-rebuild switch";
-      };
-
-      histSize = 10000;
-      histFile = "$HOME/.zsh_history";
-      setOptions = [
-          "HIST_IGNORE_ALL_DUPS"
-      ];
-  };
 }
 

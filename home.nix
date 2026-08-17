@@ -4,15 +4,13 @@
     home.username = "ramo";
     home.homeDirectory = "/home/ramo";
     home.stateVersion = "26.05";
-    programs.bash = {
-        enable = true;
-        shellAliases = {
-            btw = "echo I use nixos btw";
-        };
-    };
 
     home.file.".config/awesome".source = ./config/awesome;
     home.file.".config/vim".source = ./config/vim;
+
+    imports = [
+        ./zsh_config.nix
+    ];
 
 
     # Add path to doom emacs binaries
