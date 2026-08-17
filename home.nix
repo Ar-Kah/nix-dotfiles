@@ -7,6 +7,7 @@
 
     home.file.".config/awesome".source = ./config/awesome;
     home.file.".config/vim".source = ./config/vim;
+    home.file."."
 
     home.sessionPath = [
         "$HOME/.config/emacs/bin"
