@@ -8,6 +8,10 @@
     home.file.".config/awesome".source = ./config/awesome;
     home.file.".config/vim".source = ./config/vim;
 
+    home.sessionPath = [
+        "$HOME/.config/emacs/bin"
+    ];
+
     imports = [
         ./zsh_config.nix
     ];
@@ -33,14 +37,14 @@
         slock
     ];
     
-  programs.git = {
-      enable = true;
-      settings = {
-          user = {
-              name = "Aaro Karhu";
-              email = "aaro.karhu19@gmail.com";
-          };
-          init.defaultBranch = "main";
-      }; 
-  };
+    programs.git = {
+        enable = true;
+        settings = {
+            user = {
+                name = "Aaro Karhu";
+                email = "aaro.karhu19@gmail.com";
+            };
+            init.defaultBranch = "main";
+        }; 
+    };
 }
