@@ -8,6 +8,7 @@
     home.file.".config/awesome".source = ./config/awesome;
     home.file.".config/vim".source = ./config/vim;
     home.file.".config/doom".source = ./config/doom;
+
     home.sessionPath = [
         "$HOME/.config/emacs/bin"
     ];
