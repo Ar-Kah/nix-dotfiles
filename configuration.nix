@@ -12,13 +12,7 @@
   boot.kernelParams = [ 
     "acpi_osi=Linux"
     "acpi_backlight=vendor"
-    "tmp_tis.interrupts=0"
-    "8250.nr_uarts=0"
   ];
-
-  systemd.settings.Manager = {
-    DefaultTimeoutSec = "10s";
-  };
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
