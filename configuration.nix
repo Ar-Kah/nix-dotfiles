@@ -9,7 +9,12 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "acpi_osi=Linux" "acpi_backlight=vendor" ];
+  boot.kernelParams = [ 
+    "acpi_osi=Linux"
+    "acpi_backlight=vendor"
+    "tmp_tis.interrupts=0"
+    "8250.nr_uarts=0"
+  ];
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
