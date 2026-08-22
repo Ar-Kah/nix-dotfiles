@@ -16,6 +16,10 @@
     "8250.nr_uarts=0"
   ];
 
+  boot.extraSystemdConfig = ''
+    DefaultTimeoutSec=10s
+  '';
+
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
 
