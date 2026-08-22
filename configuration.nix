@@ -16,7 +16,7 @@
     "8250.nr_uarts=0"
   ];
 
-  boot.extraSystemdConfig = ''
+  systemd.extraConfig = ''
     DefaultTimeoutSec=10s
   '';
 
