@@ -17,6 +17,12 @@
         ./zsh_config.nix
     ];
 
+    # Start emacs on startup
+    services.emacs = {
+      enable = true;
+      client.enable = true; # Creates emacsclient desktop launchers
+    };
+
     home.packages = with pkgs; [
         ripgrep
         emacs
