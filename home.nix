@@ -15,7 +15,6 @@
 
     imports = [
         ./zsh_config.nix
-        ./printer.nix
     ];
 
     home.packages = with pkgs; [
