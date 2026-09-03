@@ -31,7 +31,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Helsinki";
+  time.timeZone = "Asia/Hong_Kong";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
