@@ -95,7 +95,7 @@
     vim
     wget
     git
-    alacritty
+    alacritty # My terminal
     zip
     acpi
     htop
