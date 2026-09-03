@@ -150,3 +150,8 @@ of the cursor"
   (set-face-foreground 'line-number "#7f848e")
   (set-face-foreground 'line-number-current-line "#61afef")
   (set-face-attribute 'default nil :height 120))
+
+(after! vertico
+  (setq vertico-count 13))  ;; shorter minibuffer list
+
+(setq scroll-margin 7)
