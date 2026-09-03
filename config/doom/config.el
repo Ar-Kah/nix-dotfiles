@@ -155,3 +155,6 @@ of the cursor"
   (setq vertico-count 13))  ;; shorter minibuffer list
 
 (setq scroll-margin 7)
+
+;; set wraping text to true
+(setq global-visual-line-mode t)
