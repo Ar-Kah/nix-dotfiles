@@ -53,8 +53,9 @@
         slock
 
         # Python stuff
-      jupyter
-      python3
+        python3
+        jupyter
+        python3Packages.ipykernel
     ];
     
     programs.git = {
