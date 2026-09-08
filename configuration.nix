@@ -17,13 +17,13 @@
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
-
   # Enable Zsh system-wide so it gets added to /etc/shells
   programs.zsh.enable = true;
   programs.steam = {
     enable = true;
   };
 
+  programs.nix-ld.enable = true;
 
   networking.hostName = "nixos-btw"; # Define your hostname.
 
