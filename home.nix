@@ -54,8 +54,7 @@
 
         # Python stuff
         (python3.withPackages (ps: with ps; [
-          jupyter
-          ipykernel
+          pip
         ]))
     ];
     
