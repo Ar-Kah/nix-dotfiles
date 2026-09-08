@@ -30,7 +30,7 @@
         nixpkgs-fmt
         nodejs
         gcc
-        clang-tools
+        clang-tools # clangd for emacs lsp for c++
 
         # dependencies for vterm in doom emacs
         cmake
