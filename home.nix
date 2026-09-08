@@ -30,7 +30,7 @@
         nixpkgs-fmt
         nodejs
         gcc
-        clangd
+        clang-tools
 
         # dependencies for vterm in doom emacs
         cmake
