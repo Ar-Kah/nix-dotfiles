@@ -11,6 +11,7 @@
 
     home.sessionPath = [
         "$HOME/.config/emacs/bin"
+        "$HOME/.local/bin"
     ];
 
     imports = [
