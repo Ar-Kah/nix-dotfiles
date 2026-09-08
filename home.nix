@@ -5,6 +5,7 @@
     home.homeDirectory = "/home/ramo";
     home.stateVersion = "26.05";
 
+    # Create symlinks between nixos-dotfiles and the normal paths
     home.file.".config/awesome".source = ./config/awesome;
     home.file.".config/vim".source = ./config/vim;
     home.file.".config/doom".source = ./config/doom;
