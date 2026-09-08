@@ -97,6 +97,7 @@
     git
     alacritty # My terminal
     zip
+    unzip
     acpi
     htop
     fd
