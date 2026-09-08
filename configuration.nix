@@ -91,6 +91,8 @@
 
   programs.firefox.enable = true;
 
+  environment.localBinInPath = true; # add .local/bin to $PATH 
+
   environment.systemPackages = with pkgs; [
     vim
     wget
