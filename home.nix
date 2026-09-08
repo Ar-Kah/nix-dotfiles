@@ -15,9 +15,6 @@
         "$HOME/.local/bin"
     ];
 
-    # ensure that .local/bin exists
-    home.file.".local/bin/.keep".text = "";
-
     imports = [
         ./zsh_config.nix
     ];
