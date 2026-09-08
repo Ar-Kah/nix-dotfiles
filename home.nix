@@ -51,6 +51,14 @@
         xbacklight
         xsel
         slock
+
+        # Python stuff
+      jupyter
+      notebook
+      python3
+      numpy
+      matplotlib
+      scipy
     ];
     
     programs.git = {
