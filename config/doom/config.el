@@ -158,3 +158,8 @@ of the cursor"
 
 ;; set wraping text to true
 (setq global-visual-line-mode t)
+
+;; Dynamically load nix-shell / direnv environments per buffer
+(use-package! envrc
+  :config
+  (envrc-global-mode))
