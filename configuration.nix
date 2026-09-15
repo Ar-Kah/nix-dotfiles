@@ -102,6 +102,7 @@
     htop
     fd
     tlp
+    direnv # added for ein working with nix-shell
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
