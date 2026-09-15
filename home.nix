@@ -40,6 +40,9 @@
         gnumake
         libtool
 
+        # brouser google chrome
+        google-chrome
+
         # awesomewm themes dependencies
         alsa-utils
         dmenu
