@@ -168,4 +168,6 @@ of the cursor"
 (setq shell-file-name (executable-find "zsh"))
 (setq vterm-shell (executable-find "zsh"))
 
-(setq auto-save-default t)
+;; Set autosave parameters
+(setq auto-save-default t) ;; enable autosave
+(setq auto-save-timeout 10) ;; change the default of 30sec => 10sec
