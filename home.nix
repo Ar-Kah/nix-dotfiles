@@ -56,12 +56,6 @@
         xsel
         slock
 
-        # Python stuff
-        (python3.withPackages (ps: with ps; [
-          pip
-          jupyter
-          ipykernel
-        ]))
     ];
     
     programs.git = {
