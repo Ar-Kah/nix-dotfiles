@@ -17,7 +17,8 @@
     ];
 
     imports = [
-        ./zsh_config.nix
+        ./zsh_config.nix # custom shell environment
+        ./python.nix
     ];
 
     # Start emacs on startup
