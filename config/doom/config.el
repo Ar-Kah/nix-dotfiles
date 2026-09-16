@@ -163,3 +163,7 @@ of the cursor"
 (use-package! envrc
   :config
   (envrc-global-mode))
+
+;; Explicitly tell Emacs and vterm to use Zsh
+(setq shell-file-name (executable-find "zsh"))
+(setq vterm-shell (executable-find "zsh"))
