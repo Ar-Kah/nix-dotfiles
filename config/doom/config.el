@@ -167,3 +167,5 @@ of the cursor"
 ;; Explicitly tell Emacs and vterm to use Zsh
 (setq shell-file-name (executable-find "zsh"))
 (setq vterm-shell (executable-find "zsh"))
+
+(setq auto-save-default t)
