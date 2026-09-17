@@ -13,6 +13,7 @@
       jupyterlab
       nbclient
       nbformat
+      scikit-learn
     ]))
   ];
 }
