@@ -103,6 +103,9 @@
     fd
     tlp
     direnv # added for ein working with nix-shell
+
+    # xclip is needed for screenshotting script
+    xclip
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
