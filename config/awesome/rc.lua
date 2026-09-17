@@ -310,6 +310,9 @@ globalkeys = mytable.join(
     awful.key({}, "Print",
               function ()
                   awful.spawn.with_shell(os.getenv("HOME") .. "/.local/bin/screenshot.sh")
+                  naughty.notify({
+                          text = "screenshot taken and saved to clipboard"                 
+                      })
               end,
               { description = "take a screenshot and save the image to the clipboard", group = "hotkeys" }),
 
