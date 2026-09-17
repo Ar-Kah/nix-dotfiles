@@ -17,7 +17,7 @@
     ];
 
     imports = [
-        ./zsh_config.nix # custom shell environment
+        ./zsh.nix # custom shell environment
         ./python.nix
     ];
 
