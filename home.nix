@@ -44,6 +44,9 @@
         # brouser google chrome
         google-chrome
 
+        # Music
+        spotify
+
         # awesomewm themes dependencies
         alsa-utils
         dmenu
