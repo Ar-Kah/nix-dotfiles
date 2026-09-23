@@ -14,6 +14,7 @@
       nbclient
       nbformat
       scikit-learn
+      scikit-image
     ]))
   ];
 }
