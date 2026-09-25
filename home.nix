@@ -59,6 +59,8 @@
         xsel
         slock
 
+        # Latex
+        texlive.combined.scheme-medium
     ];
     
     programs.git = {
