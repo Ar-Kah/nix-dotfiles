@@ -60,7 +60,9 @@
         slock
 
         # Latex
-        texlive.combined.scheme-medium
+        (texlive.combine {
+            inherit (texlive) scheme-medium wrapfig capt-of ulem hyperref;
+        })
     ];
     
     programs.git = {
