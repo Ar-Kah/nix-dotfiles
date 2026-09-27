@@ -106,6 +106,9 @@
 
     # xclip is needed for screenshotting script
     xclip
+    
+    # download discord for the desktop environment
+    discord
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
