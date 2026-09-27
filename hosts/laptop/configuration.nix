@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./imports/printer.nix
+      ~/nixos-dotfiles/imports/printer.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
