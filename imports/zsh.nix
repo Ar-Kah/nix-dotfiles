@@ -32,8 +32,8 @@
     shellAliases = {
       ll = "ls -l";
       edit = "sudo -e";
-      update laptop = "sudo nixos-rebuild switch --flake /home/ramo/nixos-dotfiles#laptop";
-      update desktop = "sudo nixos-rebuild switch --flake /home/ramo/nixos-dotfiles#desktop";
+      update-laptop = "sudo nixos-rebuild switch --flake /home/ramo/nixos-dotfiles#laptop";
+      update-desktop = "sudo nixos-rebuild switch --flake /home/ramo/nixos-dotfiles#desktop";
       btw = "echo I use nixos btw";
     };
 
