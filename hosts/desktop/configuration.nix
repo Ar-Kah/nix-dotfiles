@@ -20,7 +20,7 @@
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.open = true;
-  };
+  }
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
   # Enable Zsh system-wide so it gets added to /etc/shells
