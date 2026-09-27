@@ -15,12 +15,6 @@
     "acpi_backlight=vendor"
   ];
 
-  # Gpu settings for gtx 1660 super
-  {
-    hardware.graphics.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia.open = true;
-  }
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
   # Enable Zsh system-wide so it gets added to /etc/shells
@@ -29,6 +23,31 @@
     enable = true;
   };
 
+  hardware.graphics = {
+      enable = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+      # Modesetting is required for modern desktop environments and Wayland
+      modesetting.enable = true;
+
+      # Enable the NVIDIA GUI control panel (nvidia-settings)
+      nvidiaSettings = true;
+
+      # Option to select the driver package (stable, beta, production, legacy, etc.)
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+      # Enable open-source kernel module (NOT Nouveau)
+      # Set to true for Turing or newer GPUs (GTX 16xx, RTX 20xx and newer)
+      # Set to false for older GPUs (GTX 10xx and older)
+      open = false;
+
+      # Power management options (set to true if you encounter sleep/suspend issues)
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+  };
   programs.nix-ld.enable = true;
 
   networking.hostName = "nixos-btw"; # Define your hostname.
