@@ -28,26 +28,35 @@
     };
 
     home.packages = with pkgs; [
-        ripgrep
+        # --- Doom Emacs Core & Search Tools ---
+        ripgrep                   # Fast text searching (used by Doom Vertico/Consult)
+        fd                        # Fast file finding (recommended for Doom Projectile/Vertico)
         emacs
-        nil
-        nixpkgs-fmt
-        nodejs
-        gcc
-        clang-tools # clangd for emacs lsp for c++
+        gcc                       # Compiler for Tree-Sitter & Emacs native compilation
+        nodejs                    # Runtime required by npm-based language servers
 
-        # dependencies for vterm in doom emacs
+        # --- Language Servers (LSP) & Formatters for Doom Emacs ---
+        pyright                   # Python LSP -> provides pyright-langserver (for: (python +pyright))
+        clang-tools               # C/C++ LSP -> provides clangd (for: (cc +lsp))
+        nil                       # Nix LSP -> provides nil (for: (nix +lsp))
+        nixpkgs-fmt               # Nix code formatter
+        bash-language-server      # Shell script LSP -> provides bash-language-server (for: sh)
+        haskell-language-server   # Haskell LSP -> provides haskell-language-server-wrapper (for: (haskell +lsp))
+        texlab                    # LaTeX LSP -> provides texlab (for: latex)
+        lua-language-server       # Lua LSP -> provides lua-language-server (for: lua)
+        yaml-language-server      # YAML LSP -> provides yaml-language-server (for: yaml)
+        vscode-langservers-extracted # JSON LSP -> provides vscode-json-language-server (for: json)
+
+        # --- Dependencies for vterm in Doom Emacs ---
         cmake
         gnumake
         libtool
 
-        # brouser google chrome
+        # --- Applications ---
         google-chrome
-
-        # Music
         spotify
 
-        # awesomewm themes dependencies
+        # --- AwesomeWM Theme Dependencies ---
         alsa-utils
         dmenu
         librewolf
@@ -59,7 +68,7 @@
         xsel
         slock
 
-        # Latex
+        # --- LaTeX Distribution ---
         (texlive.combine {
             inherit (texlive) scheme-medium wrapfig capt-of ulem hyperref;
         })
