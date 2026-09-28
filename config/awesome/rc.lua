@@ -921,28 +921,27 @@ client.connect_signal("mouse::enter", function(c)
                                           c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
 end)
 
-client.connect_signal("focus", function(c) 
-    -- Set the border color (your original functionality)
+client.connect_signal("focus", function(c)
+    -- Set the border color
     c.border_color = beautiful.border_focus 
     
-    -- Prevent the mouse from jumping around during Awesome's initial startup
+    -- Prevent jumping during startup
     if not awesome.startup then
-        local m = mouse.coords()
-        local geo = c:geometry()
         
-        -- Check if the mouse is already inside the boundary of the newly focused client
-        local is_inside = m.x >= geo.x and m.x <= (geo.x + geo.width) and
-                          m.y >= geo.y and m.y <= (geo.y + geo.height)
-                          
-        -- If the mouse is not already inside the window, jump it to the center
-        if not is_inside then
+        -- ONLY warp the mouse if it is NOT physically touching the newly focused client.
+        -- This inherently includes borders, titlebars, and perfectly handles Mod+J/K.
+        if mouse.current_client ~= c then
+            local geo = c:geometry()
             mouse.coords({
                 x = geo.x + math.floor(geo.width / 2),
                 y = geo.y + math.floor(geo.height / 2)
             })
         end
+        
     end
 end)
+
+
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- switch to parent after closing child window
