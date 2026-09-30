@@ -86,7 +86,10 @@ services.xserver = {
       # };
 
       # --- Enable the GNOME Desktop Environment and GDM ---
-      displayManager.gdm.enable = true;
+      displayManager.gdm = {
+          enable = true;
+          wayland = false;
+      };
       desktopManager.gnome.enable = true;
   };
 
