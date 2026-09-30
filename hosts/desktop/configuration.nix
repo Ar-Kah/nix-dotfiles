@@ -44,7 +44,7 @@
     powerManagement.finegrained = false;
 
     # Use open source kernel module (set to true if you have GTX 16xx, RTX 20xx or newer)
-    open = false;
+    open = true;
 
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
