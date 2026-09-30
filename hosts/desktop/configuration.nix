@@ -31,8 +31,6 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  # Enable Graphics / OpenGL
-  hardware.graphics.enable = true;
 
   hardware.nvidia = {
     # Modesetting is required for GNOME / Wayland
