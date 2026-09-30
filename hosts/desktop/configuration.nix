@@ -31,25 +31,25 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  # Enable Graphics / OpenGL
+  hardware.graphics.enable = true;
 
   hardware.nvidia = {
-      # Modesetting is required for modern desktop environments and Wayland
-      modesetting.enable = true;
+    # Modesetting is required for GNOME / Wayland
+    modesetting.enable = true;
 
-      # Enable the NVIDIA GUI control panel (nvidia-settings)
-      nvidiaSettings = true;
+    # FIX FOR FREEZING ON WAKE:
+    # Enables systemd suspend/resume services to preserve VRAM across sleep cycles
+    powerManagement.enable = true;
 
-      # Option to select the driver package (stable, beta, production, legacy, etc.)
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Fine-grained power management (leave false unless you are on a laptop with hybrid graphics)
+    powerManagement.finegrained = false;
 
-      # Enable open-source kernel module (NOT Nouveau)
-      # Set to true for Turing or newer GPUs (GTX 16xx, RTX 20xx and newer)
-      # Set to false for older GPUs (GTX 10xx and older)
-      open = false;
+    # Use open source kernel module (set to true if you have GTX 16xx, RTX 20xx or newer)
+    open = false;
 
-      # Power management options (set to true if you encounter sleep/suspend issues)
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   programs.nix-ld.enable = true;
 
