@@ -69,25 +69,32 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "fi";
 
-  services.xserver = {
+services.xserver = {
       enable = true;
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
-      windowManager.awesome = {
-        enable = true;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
-          luadbi-mysql
-          awesome-wm-widgets      
-          luautf8
-        ];
-      };
+      
+      # --- Commented out Awesome WM ---
+      # windowManager.awesome = {
+      #   enable = true;
+      #   luaModules = with pkgs.luaPackages; [
+      #     luarocks
+      #     luadbi-mysql
+      #     awesome-wm-widgets      
+      #     luautf8
+      #   ];
+      # };
+
+      # --- Enable the GNOME Desktop Environment and GDM ---
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
   };
 
-  services.displayManager = {
-    sddm.enable = true;
-    defaultSession = "none+awesome";
-  };  
+  # --- Commented out SDDM ---
+  # services.displayManager = {
+  #   sddm.enable = true;
+  #   defaultSession = "none+awesome";
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "fi";
