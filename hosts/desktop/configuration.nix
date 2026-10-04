@@ -100,7 +100,7 @@ services.xserver = {
     fcitx5 = {
       waylandFrontend = false;
       addons = with pkgs; [
-        fqt6Packages.citx5-chinese-addons
+        qt6Packages.fcitx5-chinese-addons
         fcitx5-gtk
         fcitx5-rime
         rime-data
