@@ -98,9 +98,9 @@ services.xserver = {
     enable = true;
     type = "fcitx5";
     fcitx5 = {
-      waylandFrontend = true; # Change to false if you are using X11 instead of Wayland
+      waylandFrontend = false;
       addons = with pkgs; [
-        fcitx5-chinese-addons
+        fqt6Packages.citx5-chinese-addons
         fcitx5-gtk
         fcitx5-rime
         rime-data
