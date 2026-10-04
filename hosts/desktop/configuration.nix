@@ -93,6 +93,21 @@ services.xserver = {
   #   sddm.enable = true;
   #   defaultSession = "none+awesome";
   # };
+  
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true; # Change to false if you are using X11 instead of Wayland
+      addons = with pkgs; [
+        fcitx5-chinese-addons
+        fcitx5-gtk
+        fcitx5-rime
+        rime-data
+      ];
+    };
+  };
+
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "fi";
