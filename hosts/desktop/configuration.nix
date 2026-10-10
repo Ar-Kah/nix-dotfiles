@@ -7,9 +7,6 @@
       ../../imports/printer.nix
     ];
 
-  # for installing graphineos
-  services.udev.packages = [ pkgs.android-udev-rules ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -133,7 +130,7 @@ services.xserver = {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ramo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "adbusers" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -154,6 +151,7 @@ services.xserver = {
     fd
     tlp
     direnv # added for ein working with nix-shell
+    android-tools
 
     # xclip is needed for screenshotting script
     xclip
