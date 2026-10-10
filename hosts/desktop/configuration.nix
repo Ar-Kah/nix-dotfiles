@@ -7,6 +7,9 @@
       ../../imports/printer.nix
     ];
 
+  # for installing graphineos
+  services.udev.packages = [ pkgs.android-udev-rules ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
