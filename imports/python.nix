@@ -15,11 +15,6 @@
       nbformat
       scikit-learn
       scikit-image
-      torch
-      torchvision
-      lightning
-      tqdm
-      pandas
       pip
     ]))
   ];
