@@ -17,8 +17,8 @@
       scikit-image
       torch
       torchvision
+      torchlightning
       tqdm
-      ptl
     ]))
   ];
 }
