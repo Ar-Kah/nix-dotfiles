@@ -15,7 +15,7 @@
       nbformat
       scikit-learn
       scikit-image
-      pip
+      pandas
     ]))
   ];
 }
