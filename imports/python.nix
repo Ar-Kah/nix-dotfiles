@@ -15,6 +15,10 @@
       nbformat
       scikit-learn
       scikit-image
+      torch
+      torch-vision
+      tqdm
+      PTL
     ]))
   ];
 }
