@@ -49,7 +49,14 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  programs.nix-ld.enable = true;
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+    ];
+  };
 
   networking.hostName = "nixos-btw"; # Define your hostname.
 
