@@ -18,7 +18,7 @@
       torch
       torchvision
       tqdm
-      PTL
+      ptl
     ]))
   ];
 }
