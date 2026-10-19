@@ -19,6 +19,7 @@
       torchvision
       lightning
       tqdm
+      pandas
     ]))
   ];
 }
