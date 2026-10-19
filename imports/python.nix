@@ -16,7 +16,7 @@
       scikit-learn
       scikit-image
       torch
-      torch-vision
+      torchvision
       tqdm
       PTL
     ]))
