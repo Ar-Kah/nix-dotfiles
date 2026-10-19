@@ -20,6 +20,7 @@
       lightning
       tqdm
       pandas
+      pip
     ]))
   ];
 }
