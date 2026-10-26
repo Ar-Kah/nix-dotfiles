@@ -165,6 +165,14 @@ services.xserver = {
     
     # download discord for the desktop environment
     discord
+
+    # System video/audio plugins
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
