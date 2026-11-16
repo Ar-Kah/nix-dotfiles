@@ -103,7 +103,7 @@
     fd
     tlp
     direnv # added for ein working with nix-shell
-    dolphin
+    pkgs.dolphin
 
     # xclip is needed for screenshotting script
     xclip
