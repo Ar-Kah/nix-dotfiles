@@ -17,6 +17,7 @@
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
   nixpkgs.config.allowUnfree = true;
+
   # Enable Zsh system-wide so it gets added to /etc/shells
   programs.zsh.enable = true;
   programs.steam = {
@@ -25,68 +26,45 @@
 
   programs.nix-ld.enable = true;
 
-  networking.hostName = "nixos-btw"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
+  networking.hostName = "nixos-btw";
   networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Hong_Kong";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "fi";
 
+  # Keep xserver enabled so xkb.layout applies to Wayland/COSMIC as well
   services.xserver = {
-      enable = true;
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 35;
-      windowManager.awesome = {
-        enable = true;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
-          luadbi-mysql
-          awesome-wm-widgets      
-          luautf8
-        ];
-      };
+    enable = true;
+    xkb.layout = "fi";
+    # xkb.options = "eurosign:e,caps:escape";
   };
 
+  # Display Manager & COSMIC Desktop
   services.displayManager = {
     sddm.enable = true;
-    defaultSession = "none+awesome";
-  };  
+    defaultSession = "cosmic";
+  };
 
-  services.desktopManager.cosmic.enable = true; # add Cosmic wm
+  services.desktopManager.cosmic.enable = true;
   services.system76-scheduler.enable = true;
-
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "fi";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
+  # Enable sound via PipeWire.
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users.ramo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -99,22 +77,25 @@
     vim
     wget
     git
-    alacritty # My terminal
+    alacritty
     zip
     unzip
     acpi
     htop
     fd
     tlp
-    direnv # added for ein working with nix-shell
-    # thunar # File explorer
+    direnv
+    wl-clipboard # Wayland replacement for xclip
 
-    # xclip is needed for screenshotting script
-    xclip
+    # Standalone Lua packages (kept without AwesomeWM)
+    lua
+    luarocks
   ];
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+
   services.upower.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -128,6 +109,4 @@
   };
 
   nix.settings.auto-optimise-store = true;
-
 }
-
