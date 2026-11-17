@@ -45,7 +45,7 @@
 
   # Display Manager & COSMIC Desktop
   services.displayManager = {
-    sddm.enable = true;
+    cosmic-greeter.enable = true;
     defaultSession = "cosmic";
   };
 
