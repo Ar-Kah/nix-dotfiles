@@ -107,7 +107,7 @@
     fd
     tlp
     direnv # added for ein working with nix-shell
-    thunar
+    # thunar # File explorer
 
     # xclip is needed for screenshotting script
     xclip
