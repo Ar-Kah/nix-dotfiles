@@ -79,12 +79,6 @@
 
   # Enable the COSMIC desktop environment
   services.desktopManager.cosmic.enable = true;
-
-  # --- Commented out SDDM ---
-  # services.displayManager = {
-  #   sddm.enable = true;
-  #   defaultSession = "none+awesome";
-  # };
   
   i18n.inputMethod = {
     enable = true;
