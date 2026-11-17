@@ -138,6 +138,7 @@
     tlp
     direnv # added for ein working with nix-shell
     android-tools
+    cosmic-ext-applet-minimon
 
     # xclip is needed for screenshotting script
     xclip
