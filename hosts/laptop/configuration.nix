@@ -125,4 +125,8 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+
+  # Test boot optimizations
+  boot.initrd.availableKernelModules = lib.mkForce [ "xhci_pci" "ahci" "sd_mod" ];
 }
