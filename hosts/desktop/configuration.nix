@@ -142,8 +142,6 @@
 
     # xclip is needed for screenshotting script
     xclip
-    
-    # download discord for the desktop environment
     discord
 
     # System video/audio plugins

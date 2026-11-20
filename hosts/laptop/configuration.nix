@@ -87,6 +87,7 @@
     direnv
     wl-clipboard # Wayland replacement for xclip
     cosmic-ext-applet-minimon
+    discord
 
     # Standalone Lua packages (kept without AwesomeWM)
     lua
