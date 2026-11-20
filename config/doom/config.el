@@ -157,7 +157,7 @@ of the cursor"
 (setq scroll-margin 7)
 
 ;; set wraping text to true
-(setq global-visual-line-mode t)
+(setq global-visual-line-mode 1)
 
 ;; Dynamically load nix-shell / direnv environments per buffer
 (use-package! envrc
