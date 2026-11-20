@@ -139,18 +139,7 @@
     direnv # added for ein working with nix-shell
     android-tools
     cosmic-ext-applet-minimon # Cosmic applets
-
-    # xclip is needed for screenshotting script
-    xclip
     discord
-
-    # System video/audio plugins
-    gst_all_1.gstreamer
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
