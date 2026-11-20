@@ -74,32 +74,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "fi";
 
-services.xserver = {
-      enable = true;
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 35;
-      
-      # --- Commented out Awesome WM ---
-      # windowManager.awesome = {
-      #   enable = true;
-      #   luaModules = with pkgs.luaPackages; [
-      #     luarocks
-      #     luadbi-mysql
-      #     awesome-wm-widgets      
-      #     luautf8
-      #   ];
-      # };
+# Enable the COSMIC login manager
+  services.displayManager.cosmic-greeter.enable = true;
 
-      # --- Enable the GNOME Desktop Environment and GDM ---
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-  };
-
-  # --- Commented out SDDM ---
-  # services.displayManager = {
-  #   sddm.enable = true;
-  #   defaultSession = "none+awesome";
-  # };
+  # Enable the COSMIC desktop environment
+  services.desktopManager.cosmic.enable = true;
   
   i18n.inputMethod = {
     enable = true;
@@ -159,6 +138,7 @@ services.xserver = {
     tlp
     direnv # added for ein working with nix-shell
     android-tools
+    cosmic-ext-applet-minimon # Cosmic applets
 
     # xclip is needed for screenshotting script
     xclip
