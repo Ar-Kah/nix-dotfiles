@@ -12,7 +12,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelParams = [
-    "acpi_osi=Linux"
+    "acpi_backlight=native"
   ];
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
