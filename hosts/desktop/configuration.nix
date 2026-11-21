@@ -10,9 +10,9 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ 
-    "acpi_osi=Linux"
-    "acpi_backlight=vendor"
+
+  boot.kernelParams = [
+    "acpi_backlight=native"
   ];
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
