@@ -11,9 +11,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelParams = [
-    "acpi_osi=!"
-    "acpi_osi=\"Windows 2009\""
+  boot.kernelParams = [ 
+    "acpi_osi=Linux"
     "acpi_backlight=native"
   ];
 
