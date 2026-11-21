@@ -116,7 +116,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ramo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "adbusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "adbusers" "i2c" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -139,6 +139,7 @@
     direnv # added for ein working with nix-shell
     android-tools
     cosmic-ext-applet-minimon # Cosmic applets
+    cosmic-ext-applet-external-monitor-brightness
     discord
   ];
   fonts.packages = with pkgs; [
@@ -158,5 +159,10 @@
 
   nix.settings.auto-optimise-store = true;
 
+  boot.kernelModules = [ "i2c-dev" ];
+
+  services.udev.extraRules = ''
+    KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
 }
 
