@@ -12,9 +12,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelParams = [
-    "acpi_osi=!"
-    "acpi_osi=\"Windows 2009\""
-    "acpi_backlight=native"
+    "acpi_osi=Linux"
   ];
 
   # Allow unfree packages (required for Steam, NVIDIA drivers, etc.)
